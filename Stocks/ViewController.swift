@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     // MARK: - Requests
     
-    private let token = "pk_4335b7641e304f6e8ef89cfe43a99cb4"
+    private let token = "pk_a9abbb6ddd9e4704a1d6a16c64c38108"
     
     private func requestCompanies() {
         
@@ -159,17 +159,11 @@ class ViewController: UIViewController {
             
             guard
                 let url = URL(string: imageURL),
-                let data = try? Data(contentsOf: url) else {return print("Something wrong with company logo")}
-            
-            
+                let data = try? Data(contentsOf: url),
+                let logo = UIImage(data: data) else {return print("Something wrong with company logo")}
             
             DispatchQueue.main.async { [weak self] in
-                self?.companyLogo.image = UIImage(data: data)
-                if self!.animateFlag {
-                    self?.animateFlag = false
-                } else {
-                    self?.activityIndicator.stopAnimating()
-                }
+                self?.setLogo(image: logo)
             }
             
         } catch {
@@ -178,6 +172,15 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Work with UI
+    
+    private func setLogo(image: UIImage) {
+        companyLogo.image = image
+        if animateFlag {
+            animateFlag = false
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
     
     private func displayStockInfo(companyName: String, companySymbol: String, price: Double, priceChange: Double) {
         if animateFlag {
