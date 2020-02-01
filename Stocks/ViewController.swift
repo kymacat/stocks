@@ -37,8 +37,17 @@ class ViewController: UIViewController {
     // MARK: - Private
     
     private var animateFlag = false
+    private var connectionFlag = false
     
-    private lazy var companies = [String: String]()
+    private var companies = [String: String]()
+    
+    private lazy var reserveCompanies = [
+        "Apple": "AAPL",
+        "Microsoft": "MSFT",
+        "Google": "GOOG",
+        "Amazon": "AMZN",
+        "Facebook": "FB"
+    ]
     
     // MARK: - Requests
     
@@ -54,9 +63,13 @@ class ViewController: UIViewController {
             if let data = data,
             (response as? HTTPURLResponse)?.statusCode == 200,
                 error == nil {
+                self?.connectionFlag = true
                 self?.parseCompanies(from: data)
             } else {
-                print("Network error")
+                DispatchQueue.main.async { [weak self] in
+                    self?.connectionFlag = false
+                    self?.showError()
+                }
             }
         }
         
@@ -79,9 +92,13 @@ class ViewController: UIViewController {
             if let data = data,
             (response as? HTTPURLResponse)?.statusCode == 200,
                 error == nil {
+                self?.connectionFlag = true
                 self?.parseQuote(from: data)
             } else {
-                print("Network error")
+                DispatchQueue.main.async { [weak self] in
+                    self?.connectionFlag = false
+                    self?.showError()
+                }
             }
         }
         
@@ -89,9 +106,13 @@ class ViewController: UIViewController {
             if let data = data,
             (response as? HTTPURLResponse)?.statusCode == 200,
                 error == nil {
+                self?.connectionFlag = true
                 self?.parseLogo(from: data)
             } else {
-                print("Network error")
+                DispatchQueue.main.async { [weak self] in
+                    self?.connectionFlag = false
+                    self?.showError()
+                }
             }
         }
         
@@ -173,6 +194,14 @@ class ViewController: UIViewController {
     
     // MARK: - Work with UI
     
+    private func showError() {
+        companyPickerView.reloadAllComponents()
+        let alert = UIAlertController(title: "Error", message: "Internet connection failed", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
     private func setLogo(image: UIImage) {
         companyLogo.image = image
         if animateFlag {
@@ -236,7 +265,11 @@ extension ViewController : UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return companies.keys.count
+        if connectionFlag {
+            return companies.keys.count
+        } else {
+            return reserveCompanies.keys.count
+        }
     }
     
     
@@ -247,10 +280,19 @@ extension ViewController : UIPickerViewDataSource {
 extension ViewController : UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array(companies.keys)[row]
+        
+        if connectionFlag {
+            return Array(companies.keys)[row]
+        } else {
+            return Array(reserveCompanies.keys)[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        requestQouteUpdate()
+        if connectionFlag {
+            requestQouteUpdate()
+        } else {
+            requestCompanies()
+        }
     }
 }

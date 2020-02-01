@@ -52,7 +52,6 @@ class CustomButton : UIButton {
 
     func touchDown() {
         stopTimer()
-
         layer.backgroundColor = color.withAlphaComponent(touchDownAlpha).cgColor
     }
 
