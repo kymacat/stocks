@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="slF-ND-CSQ">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,15 +8,73 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="kBH-eS-rYW">
+            <objects>
+                <viewController id="slF-ND-CSQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GAY-lu-tr9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of leading companies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtT-MV-cf9">
+                                <rect key="frame" x="70" y="113" width="274" height="20.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stocks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g61-cP-rhR">
+                                <rect key="frame" x="70" y="65" width="274" height="40"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAc-Hf-arr" customClass="CustomButton" customModule="Stocks" customModuleProvider="target">
+                                <rect key="frame" x="146" y="684" width="122" height="45"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.79215686269999996" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="KsT-Ll-8Lz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="stocks" translatesAutoresizingMaskIntoConstraints="NO" id="xVX-1d-wSK">
+                                <rect key="frame" x="87" y="172.33333333333334" width="240" height="259.66666666666663"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g61-cP-rhR" firstAttribute="top" secondItem="bo2-3m-mwp" secondAttribute="top" constant="21" id="1P7-eA-oo5"/>
+                            <constraint firstItem="bo2-3m-mwp" firstAttribute="bottom" secondItem="VAc-Hf-arr" secondAttribute="bottom" constant="133" id="58w-Jk-EGS"/>
+                            <constraint firstItem="bo2-3m-mwp" firstAttribute="trailing" secondItem="VAc-Hf-arr" secondAttribute="trailing" constant="146" id="B6c-9v-H6v"/>
+                            <constraint firstItem="bo2-3m-mwp" firstAttribute="trailing" secondItem="xVX-1d-wSK" secondAttribute="trailing" constant="87" id="KiG-n8-Mek"/>
+                            <constraint firstItem="LtT-MV-cf9" firstAttribute="top" secondItem="g61-cP-rhR" secondAttribute="bottom" constant="8" id="OZ9-Hk-ya7"/>
+                            <constraint firstItem="g61-cP-rhR" firstAttribute="leading" secondItem="bo2-3m-mwp" secondAttribute="leading" constant="70" id="RrO-ZR-ZMa"/>
+                            <constraint firstItem="bo2-3m-mwp" firstAttribute="trailing" secondItem="g61-cP-rhR" secondAttribute="trailing" constant="70" id="UJ0-Tl-Cuw"/>
+                            <constraint firstItem="VAc-Hf-arr" firstAttribute="leading" secondItem="bo2-3m-mwp" secondAttribute="leading" constant="146" id="aV4-kR-Md2"/>
+                            <constraint firstItem="bo2-3m-mwp" firstAttribute="trailing" secondItem="LtT-MV-cf9" secondAttribute="trailing" constant="70" id="f8j-gG-uCL"/>
+                            <constraint firstItem="LtT-MV-cf9" firstAttribute="leading" secondItem="bo2-3m-mwp" secondAttribute="leading" constant="70" id="fs5-6O-aDi"/>
+                            <constraint firstItem="xVX-1d-wSK" firstAttribute="top" secondItem="LtT-MV-cf9" secondAttribute="bottom" constant="38.5" id="mWm-w1-eDm"/>
+                            <constraint firstItem="VAc-Hf-arr" firstAttribute="top" secondItem="xVX-1d-wSK" secondAttribute="bottom" constant="252" id="sCw-tN-0F8"/>
+                            <constraint firstItem="xVX-1d-wSK" firstAttribute="leading" secondItem="bo2-3m-mwp" secondAttribute="leading" constant="87" id="vac-Oc-7RJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bo2-3m-mwp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPU-EV-31Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694.20289855072474" y="131.91964285714286"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stocks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Stocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM2-lH-hpN">
-                                <rect key="frame" x="40" y="164" width="119.5" height="21"/>
+                                <rect key="frame" x="40.000000000000007" y="164" width="119.66666666666669" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,13 +86,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-iR-CR4">
-                                <rect key="frame" x="0.0" y="593" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="593.33333333333337" width="414" height="268.66666666666663"/>
                             </pickerView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-bL-Aco">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzD-KA-QAL">
-                                <rect key="frame" x="40" y="225" width="57.5" height="21"/>
+                                <rect key="frame" x="40" y="225" width="57.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,6 +162,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ldm-Kk-zxx"/>
                     <connections>
                         <outlet property="activityIndicator" destination="jbf-bL-Aco" id="X4n-38-KF6"/>
                         <outlet property="companyLogo" destination="JWj-CY-7x5" id="J4v-uO-xsw"/>
@@ -116,7 +175,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="258" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stocks" width="512" height="512"/>
+    </resources>
 </document>

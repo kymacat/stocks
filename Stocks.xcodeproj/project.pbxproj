@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF3AD3D423E5F7BF00061F6B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3AD3D323E5F7BF00061F6B /* CustomButton.swift */; };
 		CF8CF95B23E57C63008F25D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8CF95A23E57C63008F25D4 /* AppDelegate.swift */; };
 		CF8CF95D23E57C63008F25D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8CF95C23E57C63008F25D4 /* SceneDelegate.swift */; };
 		CF8CF95F23E57C63008F25D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8CF95E23E57C63008F25D4 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF3AD3D323E5F7BF00061F6B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CF8CF95723E57C63008F25D4 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8CF95A23E57C63008F25D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF8CF95C23E57C63008F25D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				CF8CF95A23E57C63008F25D4 /* AppDelegate.swift */,
 				CF8CF95C23E57C63008F25D4 /* SceneDelegate.swift */,
 				CF8CF95E23E57C63008F25D4 /* ViewController.swift */,
+				CF3AD3D323E5F7BF00061F6B /* CustomButton.swift */,
 				CF8CF96023E57C63008F25D4 /* Main.storyboard */,
 				CF8CF96323E57C65008F25D4 /* Assets.xcassets */,
 				CF8CF96523E57C65008F25D4 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3AD3D423E5F7BF00061F6B /* CustomButton.swift in Sources */,
 				CF8CF95F23E57C63008F25D4 /* ViewController.swift in Sources */,
 				CF8CF95B23E57C63008F25D4 /* AppDelegate.swift in Sources */,
 				CF8CF95D23E57C63008F25D4 /* SceneDelegate.swift in Sources */,
